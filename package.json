@@ -1,6 +1,6 @@
 {
   "name": "grunt-fluentmigrator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fluent Migrator wrapper",
   "main": "Gruntfile.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "grunt": "0.4.x"
   },
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-release": "~0.7.0"
   }
 }
