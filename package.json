@@ -1,0 +1,28 @@
+{
+  "name": "grunt-fluentmigrator",
+  "version": "0.1.0",
+  "description": "Fluent Migrator wrapper",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndelitski/grunt-fluentmigrator.git"
+  },
+  "keywords": [
+    "grunt",
+    "fluentmigrator"
+  ],
+  "author": "Nick Delitski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndelitski/grunt-fluentmigrator/issues"
+  },
+  "peerDependencies": {
+    "grunt": "0.4.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  }
+}
