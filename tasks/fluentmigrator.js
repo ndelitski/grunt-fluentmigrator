@@ -5,17 +5,17 @@ var spawn = require('child_process').spawn,
 
 module.exports = function(grunt) {
     grunt.registerMultiTask('fluentmigrator', 'Fluent migrator cli wrapper', function() {
-        var options = this.options({
+        var options = _.extend(this.options({
                 exePath: 'Migrate.exe',
                 provider: 'sqlserver2012',
                 task: 'migrate'
-            }),
+            }), this.data),
             done = this.async(),
             log = function(message) {
                 console.log(message.toString('utf8'));
             },
             commandParams = buildCommandParameters(_.pick(options, cliArgsWhitelist));
-        grunt.verbose.writeln("executing "+options.exePath+" "+ commandParams.join(' '))
+        grunt.verbose.writeln("executing " + options.exePath + " " + commandParams.join(' '))
         var migrate = spawn(options.exePath, commandParams);
 
         migrate.stdout.on('data', log);
