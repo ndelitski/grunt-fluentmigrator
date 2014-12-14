@@ -25,6 +25,8 @@ exports.buildCommandParameters = function(options) {
         if (val !== undefined) {
             if (typeof val == 'boolean') {
                 val && params.push('--' + key);
+                if (val && key == 'verbose')
+                    params.push('true')
             } else {
                 params.push('--' + key);
                 params.push(val)
