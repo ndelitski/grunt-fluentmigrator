@@ -1,22 +1,22 @@
 var spawn = require('child_process').spawn,
-    extend = require('./../utils').extend,
+    _ = require('underscore'),
+    cliArgsWhitelist = ['assembly', 'provider', 'conn', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps' ],
     buildCommandParameters = require('./../utils').buildCommandParameters;
 
 module.exports = function(grunt) {
-    grunt.registerTask('fluentmigrator', 'Migration starting', function() {
-        var options = extend({
+    grunt.registerMultiTask('fluentmigrator', 'Fluent migrator cli wrapper', function() {
+        var options = this.options({
                 exePath: 'Migrate.exe',
-                params: {
-                    provider: 'sqlserver2012',
-                    preview: true,
-                    task: 'migrate'
-                }
-            }, this.options()),
+                provider: 'sqlserver2012',
+                task: 'migrate'
+            }),
             done = this.async(),
             log = function(message) {
                 console.log(message.toString('utf8'));
             },
-            migrate = spawn(options.exePath, buildCommandParameters(options.params));
+            commandParams = buildCommandParameters(_.pick(options, cliArgsWhitelist));
+        grunt.verbose.writeln("executing "+options.exePath+" "+ commandParams.join(' '))
+        var migrate = spawn(options.exePath, commandParams);
 
         migrate.stdout.on('data', log);
         migrate.stderr.on('data', log);

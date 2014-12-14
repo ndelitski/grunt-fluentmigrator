@@ -5,13 +5,13 @@ Here is simple Migrate.exe wrapper. Provide path to executable(relative to proje
 grunt.initConfig({
     fluentmigrator: {
         options: {
-            exePath: 'tools/migrator/Migrate.exe',
-            params: {
-                assembly : 'src/SomeProject.Migrations/bin/Debug/SomeProject.Migrations.dll',
-                output: true,
-                outputFileName: 'migrated.sql',
-                conn: "Server=.;initial catalog=SiteDb;Integrated Security=true;"
-            }
+            exePath: 'tools/migrator/Migrate.exe'
+        },
+        file: {
+            assembly : 'src/SomeProject.Migrations/bin/Debug/SomeProject.Migrations.dll',
+            output: true,
+            outputFileName: 'migrated.sql',
+            conn: "Server=.;initial catalog=SiteDb;Integrated Security=true;"
         }
     }
 })
@@ -23,15 +23,21 @@ This default options will be merged with task-defined
 ```js
 {
     exePath: 'Migrate.exe',
-    params: {
-        provider: 'sqlserver2012',
-        preview: true,
-        task: 'migrate'
-    }
+    provider: 'sqlserver2012',
+    task: 'migrate'
 }
 ```
 
+### Accepted command line arguments
+```
+'assebly', 'provider', 'conn', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps'
+```
+
 ### Change log
+
+0.1.3 (December 14, 2014)
+* multitasking
+* more concise task syntax
 
 0.1.2 (June 9, 2014)
 * Support all command-line parameters
