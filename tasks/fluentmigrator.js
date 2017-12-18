@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('fluentmigrator', 'Fluent migrator cli wrapper', function() {
         var options = _.extend(this.options({
                 exePath: 'Migrate.exe',
-                provider: 'sqlserver2012',
+                provider: 'sqlserver2014',
                 task: 'migrate'
             }), this.data),
             done = this.async(),

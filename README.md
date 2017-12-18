@@ -23,7 +23,7 @@ This default options will be merged with task-defined
 ```js
 {
     exePath: 'Migrate.exe',
-    provider: 'sqlserver2012',
+    provider: 'sqlserver2014',
     task: 'migrate'
 }
 ```
