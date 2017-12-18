@@ -7,11 +7,20 @@ grunt.initConfig({
         options: {
             exePath: 'tools/migrator/Migrate.exe'
         },
-        file: {
-            assembly : 'src/SomeProject.Migrations/bin/Debug/SomeProject.Migrations.dll',
-            output: true,
-            outputFileName: 'migrated.sql',
-            conn: "Server=.;initial catalog=SiteDb;Integrated Security=true;"
+        dev: {
+            file: {
+                assembly : 'src/SomeProject.Migrations/bin/Debug/SomeProject.Migrations.dll',
+                output: true,
+                outputFileName: 'migrated.sql',
+                conn: "Server=.;initial catalog=SiteDb;Integrated Security=true;"
+            }
+        }
+        staging: {
+            file: {
+                assembly : 'src/SomeProject.Migrations/bin/Staging/SomeProject.Migrations.dll',
+                output: false,
+                conn: "Server=.;initial catalog=SiteDb;Integrated Security=true;"
+            }
         }
     }
 })
