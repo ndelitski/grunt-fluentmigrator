@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 exePath: 'Migrate.exe',
                 provider: 'sqlserver2012',
                 task: 'migrate'
-            }), this.data),
+            }), this.data.file || this.data),
             done = this.async(),
             log = function(message) {
                 console.log(message.toString('utf8'));
