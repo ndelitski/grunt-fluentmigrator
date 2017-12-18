@@ -1,6 +1,6 @@
 var spawn = require('child_process').spawn,
     _ = require('underscore'),
-    cliArgsWhitelist = ['assembly', 'provider', 'conn', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps' ],
+    cliArgsWhitelist = ['assembly', 'provider', 'conn', 'configPath', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps' ],
     buildCommandParameters = require('./../utils').buildCommandParameters;
 
 module.exports = function(grunt) {
