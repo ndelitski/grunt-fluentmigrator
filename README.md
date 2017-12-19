@@ -30,7 +30,7 @@ This default options will be merged with task-defined
 
 ### Accepted command line arguments
 ```
-'assebly', 'provider', 'conn', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps'
+'assebly', 'provider', 'conn', 'configPath', 'task', 'verbose', 'output', 'outfile', 'namespace', 'steps', 'preview', 'version', 'profile', 'timeout', 'workingdirectory', 'tag', 'context', 'tps'
 ```
 
 ### Change log
